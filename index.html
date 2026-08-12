@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG 图标生成与下载器 - Premium SVG Exporter</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=8">
+</head>
+<body class="light-theme">
+    <!-- Background Glow Elements -->
+    <div class="glow-bg">
+        <div class="glow-sphere sphere-1"></div>
+        <div class="glow-sphere sphere-2"></div>
+    </div>
+
+    <main class="container">
+        <div class="app-layout dashboard-layout">
+            <!-- Sidebar Panel -->
+            <aside class="sidebar card">
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <span class="logo-icon">✦</span>
+                        <h1>SVG Exporter</h1>
+                    </div>
+                    <div class="theme-toggle" id="themeToggleBtn">
+                        <span class="toggle-track">
+                            <span class="toggle-thumb"></span>
+                        </span>
+                        <span class="theme-label-text">浅色模式</span>
+                    </div>
+                </div>
+
+                <!-- Search box -->
+                <div class="sidebar-search">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" placeholder="搜索 24 款线性图标..." aria-label="搜索图标">
+                </div>
+
+                <!-- Style Controls -->
+                <div class="sidebar-controls">
+                    <!-- Color Pickers -->
+                    <div class="control-colors">
+                        <div class="picker-item" title="主要线条颜色">
+                            <span class="color-indicator" style="background-color: #4E5868"></span>
+                            <input type="color" id="primaryColorPicker" value="#4E5868">
+                            <span class="picker-label">主要</span>
+                        </div>
+                        <div class="picker-item" title="辅助高亮颜色">
+                            <span class="color-indicator" style="background-color: #8FC31F"></span>
+                            <input type="color" id="accentColorPicker" value="#8FC31F">
+                            <span class="picker-label">高亮</span>
+                        </div>
+                        <!-- Keep hidden border picker to avoid JS breaks -->
+                        <input type="color" id="borderColorPicker" value="#E4E7EC" style="display: none;">
+                    </div>
+
+                    <!-- Sliders -->
+                    <div class="control-sliders">
+                        <div class="slider-item">
+                            <span class="slider-label">粗细: <strong id="strokeWidthValue">1.5 px</strong></span>
+                            <input type="range" id="strokeWidthSlider" min="1.0" max="4.0" step="0.1" value="1.5">
+                        </div>
+                        <div class="slider-item">
+                            <span class="slider-label">尺寸: <strong id="exportSizeValue">24 px</strong></span>
+                            <input type="range" id="exportSizeSlider" min="16" max="96" step="2" value="24">
+                        </div>
+                    </div>
+
+                    <button id="resetBtn" class="btn btn-secondary btn-full" title="重置样式">
+                        ↺ 重置默认样式
+                    </button>
+                </div>
+
+                <!-- Categories Filter -->
+                <div class="sidebar-categories">
+                    <h4 class="categories-title">分类 / Categories</h4>
+                    <ul class="categories-list">
+                        <li class="category-item active" data-category="all">
+                            <span class="cat-name">全部 / All</span>
+                            <span class="cat-count" id="count-all">24</span>
+                        </li>
+                        <li class="category-item" data-category="distribution">
+                            <span class="cat-name">分销与零售 / Retail</span>
+                            <span class="cat-count" id="count-distribution">5</span>
+                        </li>
+                        <li class="category-item" data-category="software">
+                            <span class="cat-name">软件与应用 / Software</span>
+                            <span class="cat-count" id="count-software">4</span>
+                        </li>
+                        <li class="category-item" data-category="custom">
+                            <span class="cat-name">定制解决方案 / Custom</span>
+                            <span class="cat-count" id="count-custom">5</span>
+                        </li>
+                        <li class="category-item" data-category="hardware-features">
+                            <span class="cat-name">硬件特征 / Hardware</span>
+                            <span class="cat-count" id="count-hardware-features">4</span>
+                        </li>
+                        <li class="category-item" data-category="ai-computing">
+                            <span class="cat-name">计算与AI模组 / AI Specs</span>
+                            <span class="cat-count" id="count-ai-computing">6</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Main Contents Section -->
+            <section class="main-content">
+                <div class="grid-header-compact">
+                    <h2>线性矢量图标库 / SVG Vector Library</h2>
+                    <p>点击任何图标卡片即可查看 SVG 源码、一键复制代码或单独下载。</p>
+                </div>
+
+                <!-- Flat Icons Grid -->
+                <div class="icons-grid" id="iconsGrid"></div>
+
+                <!-- No Results Fallback -->
+                <div class="no-results" id="noResults" style="display: none;">
+                    <span class="no-results-icon">🔍</span>
+                    <p>没有找到匹配的图标，请尝试其他关键词。</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal for showing code -->
+    <div class="modal-backdrop" id="codeModal">
+        <div class="modal card">
+            <div class="modal-header">
+                <h3 id="modalIconTitle">SVG 源代码 / Source Code</h3>
+                <button class="close-btn" id="closeModalBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-preview-box">
+                    <div id="modalIconPreview"></div>
+                </div>
+                <pre><code id="svgCodeDisplay"></code></pre>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="copyModalBtn">复制到剪切板</button>
+                <button class="btn btn-primary" id="downloadModalBtn">下载 SVG 文件</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">复制成功！</div>
+
+    <!-- JSZip for zip exports -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <footer>
+        <div class="container">
+            <p>Designed with ❤️ for modern vector graphics support. Color #4e5868.</p>
+        </div>
+    </footer>
+
+    <script src="app.js?v=8"></script>
+</body>
+</html>
