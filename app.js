@@ -484,6 +484,56 @@ document.addEventListener('DOMContentLoaded', () => {
                 <path class="svg-primary" d="M12 3.5v1.5M12 19v1.5M3.5 12h1.5M19 12h1.5" />
                 <path class="svg-accent" d="M12 6.5l3.5 8.5-3.5-1.5-3.5 1.5L12 6.5z" />
             `
+        },
+        {
+            id: 'data-logger',
+            title: '数据采集器 / Data Logger',
+            description: 'Data logging device with storage and sensor telemetry.',
+            category: 'environment-sensors',
+            filename: 'data-logger.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="4" y="4" width="16" height="16" rx="2.5" />
+                <line class="svg-primary" x1="4" y1="9" x2="20" y2="9" />
+                <path class="svg-accent" d="M7 15l2.5-3.5 3 4 2.5-3 2 2.5" />
+                <circle class="svg-accent" cx="7" cy="6.5" r="1" />
+                <circle class="svg-accent" cx="11" cy="6.5" r="1" />
+                <path class="svg-primary" d="M15 6.5h2" />
+            `
+        },
+        {
+            id: 'all-in-one-weather-station',
+            title: '一体化气象站 / All-in-One Weather Station',
+            description: 'Compact multi-parameter weather station with integrated sensors.',
+            category: 'environment-sensors',
+            filename: 'all-in-one-weather-station.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <line class="svg-primary" x1="12" y1="3" x2="12" y2="21" />
+                <path class="svg-primary" d="M7 11h10M7.5 14h9M8 17h8" />
+                <path class="svg-primary" d="M9 8.5h6v9.5H9z" />
+                <path class="svg-accent" d="M6 5.5h12" />
+                <circle class="svg-accent" cx="6" cy="5.5" r="1.5" />
+                <circle class="svg-accent" cx="18" cy="5.5" r="1.5" />
+                <path class="svg-accent" d="M12 3l-2.5 2.5H14.5z" />
+            `
+        },
+        {
+            id: 'industrial-sensors',
+            title: '工业级传感器 / Industrial Sensors',
+            description: 'Ruggedized industrial probe sensor for harsh environments.',
+            category: 'environment-sensors',
+            filename: 'industrial-sensors.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M10 3h4M12 3v3" />
+                <rect class="svg-primary" x="8" y="6" width="8" height="11" rx="1.5" />
+                <path class="svg-primary" d="M8 10h8M8 13h8" />
+                <path class="svg-primary" d="M10 17v4M14 17v4" />
+                <path class="svg-accent" d="M5.5 19.5a5 5 0 0 1 0-5" />
+                <path class="svg-accent" d="M18.5 19.5a5 5 0 0 0 0-5" />
+                <circle class="svg-accent" cx="12" cy="8" r="1" />
+            `
         }
     ];
 
