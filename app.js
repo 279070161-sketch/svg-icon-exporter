@@ -371,6 +371,119 @@ document.addEventListener('DOMContentLoaded', () => {
                 <path class="svg-primary" d="M17 12l3 3-3 3" />
                 <line class="svg-primary" x1="13" y1="11" x2="11" y2="19" />
             `
+        },
+
+        // Category 6: Environment & Sensors
+        {
+            id: 'air-temperature',
+            title: '空气温度 / Air Temperature',
+            description: 'Ambient air temperature sensor measurement.',
+            category: 'environment-sensors',
+            filename: 'air-temperature.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M12 4a2.5 2.5 0 0 0-2.5 2.5v6.67a4 4 0 1 0 5 0V6.5A2.5 2.5 0 0 0 12 4z" />
+                <path class="svg-accent" d="M12 16.5v-6" />
+                <circle class="svg-accent" cx="12" cy="16.5" r="1.5" />
+                <path class="svg-accent" d="M17 6.5h2M17 9.5h1.5" />
+            `
+        },
+        {
+            id: 'water-quality',
+            title: '水质监测 / Water Quality',
+            description: 'Water quality index and liquid purity analysis.',
+            category: 'environment-sensors',
+            filename: 'water-quality.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M12 3C8 8.5 5 12.5 5 15.5a7 7 0 0 0 14 0C19 12.5 16 8.5 12 3z" />
+                <path class="svg-accent" d="M9.5 14.5l2 2 3.5-3.5" />
+                <path class="svg-accent" d="M7 11.5c2 1 4 1 6 0" />
+            `
+        },
+        {
+            id: 'relative-humidity',
+            title: '相对湿度 / Relative Humidity',
+            description: 'Ambient air moisture and relative humidity level.',
+            category: 'environment-sensors',
+            filename: 'relative-humidity.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M12 3C8.5 7.8 6 11.2 6 14.5a6 6 0 0 0 12 0C18 11.2 15.5 7.8 12 3z" />
+                <line class="svg-accent" x1="14" y1="12" x2="10" y2="17" />
+                <circle class="svg-accent" cx="10" cy="13" r="0.8" />
+                <circle class="svg-accent" cx="14" cy="16" r="0.8" />
+            `
+        },
+        {
+            id: 'barometric-pressure',
+            title: '大气压强 / Barometric Pressure',
+            description: 'Atmospheric and barometric pressure monitoring.',
+            category: 'environment-sensors',
+            filename: 'barometric-pressure.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M5 15a8 8 0 1 1 14 0" />
+                <path class="svg-primary" d="M8 18h8" />
+                <path class="svg-accent" d="M12 15l3-4" />
+                <circle class="svg-accent" cx="12" cy="15" r="1.5" />
+                <path class="svg-accent" d="M12 3v5" />
+                <path class="svg-accent" d="M9.5 6.5L12 9l2.5-2.5" />
+            `
+        },
+        {
+            id: 'light-intensity',
+            title: '光照强度 / Light Intensity',
+            description: 'Solar radiation and ambient lux light intensity.',
+            category: 'environment-sensors',
+            filename: 'light-intensity.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <circle class="svg-primary" cx="12" cy="12" r="4.5" />
+                <path class="svg-accent" d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21" />
+                <path class="svg-accent" d="M5.64 5.64l1.77 1.77M16.59 16.59l1.77 1.77M5.64 18.36l1.77-1.77M16.59 7.41l1.77-1.77" />
+            `
+        },
+        {
+            id: 'rainfall',
+            title: '降雨量 / Rainfall',
+            description: 'Precipitation and cumulative rainfall gauge.',
+            category: 'environment-sensors',
+            filename: 'rainfall.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M6.5 13a4 4 0 0 1-.3-7.9 5.5 5.5 0 0 1 10.7 1.3 3.8 3.8 0 0 1 1.1 7.6" />
+                <path class="svg-accent" d="M8 15.5l-1.5 3.5" />
+                <path class="svg-accent" d="M12 15.5l-1.5 3.5" />
+                <path class="svg-accent" d="M16 15.5l-1.5 3.5" />
+            `
+        },
+        {
+            id: 'wind-speed',
+            title: '风速 / Wind Speed',
+            description: 'Air velocity and anemometer speed detection.',
+            category: 'environment-sensors',
+            filename: 'wind-speed.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M3 8h11.5a2.5 2.5 0 1 0-2.5-2.5" />
+                <path class="svg-primary" d="M3 12.5h15.5a2 2 0 1 0-2-2" />
+                <path class="svg-accent" d="M3 17h8.5a2 2 0 1 1-2 2" />
+                <path class="svg-accent" d="M16 17h3" />
+            `
+        },
+        {
+            id: 'wind-direction',
+            title: '风向 / Wind Direction',
+            description: 'Wind direction compass and weather vane angle.',
+            category: 'environment-sensors',
+            filename: 'wind-direction.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <circle class="svg-primary" cx="12" cy="12" r="8.5" />
+                <path class="svg-primary" d="M12 3.5v1.5M12 19v1.5M3.5 12h1.5M19 12h1.5" />
+                <path class="svg-accent" d="M12 6.5l3.5 8.5-3.5-1.5-3.5 1.5L12 6.5z" />
+            `
         }
     ];
 
@@ -607,7 +720,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateCategoryCounts(searchVal) {
-        const categories = ['all', 'distribution', 'software', 'custom', 'hardware-features', 'ai-computing'];
+        const categories = ['all', 'distribution', 'software', 'custom', 'hardware-features', 'ai-computing', 'environment-sensors'];
         categories.forEach(cat => {
             const count = ICONS_DATA.filter(icon => {
                 const titleMatch = icon.title.toLowerCase().includes(searchVal);
