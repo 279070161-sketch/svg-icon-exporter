@@ -1,6 +1,144 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Icons Database (14 Custom Linear Icons) ---
+    // --- Icons Database ---
     const ICONS_DATA = [
+        // Category 0: reComputer AI Lab (6 Featured Icons from image)
+        {
+            id: 'npu-6tops-edge-ai',
+            title: '6 TOPS NPU 算力 / 6 TOPS NPU for Edge AI',
+            description: 'Octa-Core performance and 6 TOPS NPU accelerator for edge AI workload.',
+            category: 'recomputer-lab',
+            filename: '6-tops-npu-edge-ai.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="5" y="5" width="14" height="14" rx="2" />
+                <path class="svg-primary" d="M8 2v3M12 2v3M16 2v3M8 19v3M12 19v3M16 19v3M2 8h3M2 12h3M2 16h3M19 8h3M19 12h3M19 16h3" />
+                <rect class="svg-primary" x="7.5" y="7.5" width="3" height="3" rx="0.5" />
+                <rect class="svg-primary" x="13.5" y="7.5" width="3" height="3" rx="0.5" />
+                <rect class="svg-primary" x="7.5" y="13.5" width="3" height="3" rx="0.5" />
+                <rect class="svg-primary" x="13.5" y="13.5" width="3" height="3" rx="0.5" />
+                <circle class="svg-accent" cx="12" cy="12" r="2" />
+                <path class="svg-accent" d="M12 9.5v1M12 13.5v1M9.5 12h1M13.5 12h1" />
+            `
+        },
+        {
+            id: 'recomputer-ai-lab',
+            title: 'AI Lab 快速原型 / Rapid Prototyping',
+            description: 'reComputer AI Lab for rapid hardware and software prototyping.',
+            category: 'recomputer-lab',
+            filename: 'recomputer-ai-lab.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="4" y="5" width="16" height="14" rx="2" />
+                <path class="svg-primary" d="M8 2v3M12 2v3M16 2v3M8 19v3M12 19v3M16 19v3M2 12h2M20 12h2" />
+                <rect class="svg-accent" x="8" y="9" width="8" height="6" rx="1" />
+                <path class="svg-accent" d="M12 10.5l-1 1.5h2l-1 1.5" />
+                <circle class="svg-accent" cx="6" cy="12" r="0.8" />
+                <circle class="svg-accent" cx="18" cy="12" r="0.8" />
+            `
+        },
+        {
+            id: 'rich-io-expansion-ports',
+            title: '丰富 I/O 扩展 / Rich I/O Expansion',
+            description: 'HDMI, CSI/DSI, USB, GPIO & more interface expansion.',
+            category: 'recomputer-lab',
+            filename: 'rich-io-expansion.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3" y="14" width="18" height="6" rx="1.5" />
+                <path class="svg-primary" d="M5 14v-4h4l1 1.5v2.5H5" />
+                <rect class="svg-primary" x="11" y="9" width="4" height="5" rx="0.8" />
+                <line class="svg-primary" x1="11" y1="11.5" x2="15" y2="11.5" />
+                <path class="svg-primary" d="M17 14v-5M19 14v-5M17 9h2" />
+                <circle class="svg-accent" cx="7" cy="6" r="2" />
+                <circle class="svg-accent" cx="7" cy="6" r="0.7" />
+                <path class="svg-accent" d="M10 6h3" />
+                <path class="svg-accent" d="M4 17h16" />
+            `
+        },
+        {
+            id: 'm2-expansion-nvme',
+            title: 'M.2 扩展槽 / M.2 Expansion Slot',
+            description: 'NVMe & AI Accelerator Ready high-speed M.2 socket expansion.',
+            category: 'recomputer-lab',
+            filename: 'm2-expansion-nvme.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M7 20V5a1 1 0 0 1 1-1h3a1 1 0 0 0 2 0h3a1 1 0 0 1 1 1v15" />
+                <rect class="svg-primary" x="5" y="18" width="14" height="3" rx="0.5" />
+                <path class="svg-primary" d="M9 18v2M12 18v2M15 18v2" />
+                <rect class="svg-primary" x="9" y="7" width="6" height="4" rx="0.8" />
+                <path class="svg-accent" d="M12.5 12l-2 3h3l-1.5 3" />
+                <circle class="svg-accent" cx="12" cy="4" r="0.8" />
+            `
+        },
+        {
+            id: 'native-armbian-os',
+            title: '原生 Armbian OS / Native Armbian OS',
+            description: 'Compatible with Ubuntu, Android, Debian, Balena OS.',
+            category: 'recomputer-lab',
+            filename: 'native-armbian-os.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="4" y="4" width="16" height="13" rx="2" />
+                <line class="svg-primary" x1="4" y1="8" x2="20" y2="8" />
+                <circle class="svg-primary" cx="6.5" cy="6" r="0.6" />
+                <circle class="svg-primary" cx="9" cy="6" r="0.6" />
+                <path class="svg-primary" d="M7 11l2 1.5L7 14" />
+                <line class="svg-primary" x1="11.5" y1="14" x2="14" y2="14" />
+                <path class="svg-accent" d="M4 19c3 0 5-1.5 8-1.5s5 1.5 8 1.5" />
+                <path class="svg-accent" d="M17.5 12c.8-1.8 2.5-3 2.5-3s-1.2 2.7-3 3.5" />
+                <circle class="svg-accent" cx="17.5" cy="14" r="1.5" />
+            `
+        },
+        {
+            id: 'production-ready-industrial',
+            title: '工业级量产 / Production Ready',
+            description: 'Linux, Android & Industrial options ready for mass production.',
+            category: 'recomputer-lab',
+            filename: 'production-ready-industrial.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M12 3L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-3z" />
+                <path class="svg-primary" d="M12 7a5 5 0 0 0-5 5c0 1.8.9 3.3 2.3 4.2" />
+                <path class="svg-accent" d="M9 12l2.5 2.5L16.5 9" />
+                <circle class="svg-accent" cx="12" cy="12" r="2.5" />
+            `
+        },
+        {
+            id: 'tops-20-ai-acceleration',
+            title: '20 TOPS AI 算力 / 20 TOPS AI Acceleration',
+            description: 'RK1820 AI Accelerator module for high-performance AI inference.',
+            category: 'recomputer-lab',
+            filename: '20-tops-ai-acceleration.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M4 17V9l2.5-3h11L20 9v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" />
+                <path class="svg-primary" d="M7 6v3M9.5 6v3M14.5 6v3M17 6v3" />
+                <path class="svg-primary" d="M7 18v3M10 18v3M14 18v3M17 18v3" />
+                <circle class="svg-accent" cx="12" cy="13.5" r="3.2" />
+                <circle class="svg-accent" cx="12" cy="13.5" r="1" />
+                <path class="svg-accent" d="M12 11.2l-0.8 2.3h1.6L12 15.8" />
+            `
+        },
+        {
+            id: 'multi-model-ai-inference',
+            title: '多模态 AI 并发 / Multi-Model AI',
+            description: 'Concurrent CV, LLM & VLM Inference.',
+            category: 'recomputer-lab',
+            filename: 'multi-model-ai.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M4 8c2.5-2.5 5.5-3.5 8-3.5s5.5 1 8 3.5c-2.5 2.5-5.5 3.5-8 3.5S6.5 10.5 4 8z" />
+                <circle class="svg-primary" cx="12" cy="8" r="2" />
+                <rect class="svg-primary" x="4" y="14" width="7" height="6" rx="1.5" />
+                <line class="svg-primary" x1="6.5" y1="16.5" x2="8.5" y2="16.5" />
+                <line class="svg-primary" x1="6.5" y1="18.5" x2="9.5" y2="18.5" />
+                <rect class="svg-primary" x="13" y="14" width="7" height="6" rx="1.5" />
+                <path class="svg-primary" d="M15 18.5l1.5-2 1.5 2" />
+                <path class="svg-accent" d="M12 10v4M7.5 14v-2.5h9V14" />
+                <circle class="svg-accent" cx="12" cy="11.5" r="1.2" />
+            `
+        },
         // Category 1: Distribution & Retail
         {
             id: 'global-fulfillment',
@@ -138,6 +276,102 @@ document.addEventListener('DOMContentLoaded', () => {
                 <circle class="svg-accent" cx="16" cy="8" r="2.5" />
                 <path class="svg-accent" d="M16 5v1M16 10v1M13.5 8h1M18.5 8h-1" />
                 <path class="svg-primary" d="M10.5 11.5l1 1" />
+            `
+        },
+        {
+            id: 'priority',
+            title: '优先级 / Priority',
+            description: 'High-priority task flag and star highlight indicator.',
+            category: 'software',
+            filename: 'priority.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M5 21V3h11.5l-2.5 4.5L16.5 12H5" />
+                <path class="svg-accent" d="M17.5 14.5l.6 1.4 1.5.2-1.1 1.1.3 1.5-1.3-.7-1.3.7.3-1.5-1.1-1.1 1.5-.2z" />
+                <path class="svg-primary" d="M9 7.5h3.5" />
+            `
+        },
+        {
+            id: 'inbox',
+            title: '收件箱 / Inbox',
+            description: 'Incoming message tray and download direction arrow.',
+            category: 'software',
+            filename: 'inbox.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M4 13h4.5l1.5 2.5h4l1.5-2.5H20v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-5z" />
+                <path class="svg-primary" d="M4 13V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6" />
+                <path class="svg-accent" d="M12 4v8" />
+                <path class="svg-accent" d="M8.5 9L12 12.5 15.5 9" />
+            `
+        },
+        {
+            id: 'multi-source-data-access',
+            title: '多源数据接入 / Multi-Source Data Access',
+            description: 'Multi-source data access and protocol ingestion integration.',
+            category: 'software',
+            filename: 'multi-source-data-access.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="9" y="9" width="6" height="6" rx="1.5" />
+                <path class="svg-primary" d="M12 3.5v3.5M3.5 12h3.5M12 20.5v-3.5M20.5 12h-3.5" />
+                <circle class="svg-primary" cx="12" cy="3.5" r="1" />
+                <circle class="svg-primary" cx="3.5" cy="12" r="1" />
+                <circle class="svg-primary" cx="12" cy="20.5" r="1" />
+                <circle class="svg-primary" cx="20.5" cy="12" r="1" />
+                <path class="svg-accent" d="M10.5 5.5L12 7l1.5-1.5" />
+                <path class="svg-accent" d="M5.5 10.5L7 12l-1.5 1.5" />
+                <path class="svg-accent" d="M10.5 18.5L12 17l1.5 1.5" />
+                <path class="svg-accent" d="M18.5 10.5L17 12l1.5 1.5" />
+                <circle class="svg-accent" cx="12" cy="12" r="1.2" />
+            `
+        },
+        {
+            id: 'network-data-upload',
+            title: '网络数据上传 / Network Data Upload',
+            description: 'Cloud telemetry transmission and network data upload.',
+            category: 'software',
+            filename: 'network-data-upload.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M7.5 16H5a3.5 3.5 0 0 1-.6-6.9 5 5 0 0 1 9.7-2.3 4 4 0 0 1 4.4 4.7A3.5 3.5 0 0 1 17 16h-2.5" />
+                <path class="svg-accent" d="M12 20V9" />
+                <path class="svg-accent" d="M8.5 12.5L12 9l3.5 3.5" />
+                <line class="svg-accent" x1="9" y1="20" x2="15" y2="20" />
+            `
+        },
+        {
+            id: 'realtime-status-monitoring',
+            title: '实时状态监控 / Real-time Status Monitoring',
+            description: 'Real-time equipment status monitoring and live health telemetry.',
+            category: 'software',
+            filename: 'realtime-status-monitoring.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3.5" y="4.5" width="17" height="12" rx="2" />
+                <path class="svg-primary" d="M9 16.5L8 19.5h8l-1-3.0" />
+                <line class="svg-primary" x1="7" y1="19.5" x2="17" y2="19.5" />
+                <path class="svg-accent" d="M5.5 10.5h3l1.5-3.5 2 7 2-4.5 1.5 1h3" />
+                <circle class="svg-accent" cx="17.5" cy="7.5" r="0.8" />
+            `
+        },
+        {
+            id: 'positioning-dashboard',
+            title: '定位与看板 / Positioning & Dashboard',
+            description: 'GIS device positioning and analytics management dashboard.',
+            category: 'software',
+            filename: 'positioning-dashboard.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3.5" y="4" width="17" height="16" rx="2" />
+                <line class="svg-primary" x1="3.5" y1="9" x2="20.5" y2="9" />
+                <line class="svg-primary" x1="11" y1="9" x2="11" y2="20" />
+                <path class="svg-primary" d="M6 17v-4M8.5 17v-6" />
+                <path class="svg-accent" d="M15.75 11a2.25 2.25 0 0 0-2.25 2.25c0 1.6 2.25 4.25 2.25 4.25s2.25-2.65 2.25-4.25A2.25 2.25 0 0 0 15.75 11z" />
+                <circle class="svg-accent" cx="15.75" cy="13.25" r="0.75" />
+                <circle class="svg-accent" cx="6" cy="6.5" r="0.8" />
+                <circle class="svg-accent" cx="8.5" cy="6.5" r="0.8" />
+                <line class="svg-primary" x1="13" y1="6.5" x2="18" y2="6.5" />
             `
         },
 
@@ -770,7 +1004,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateCategoryCounts(searchVal) {
-        const categories = ['all', 'distribution', 'software', 'custom', 'hardware-features', 'ai-computing', 'environment-sensors'];
+        const categories = ['all', 'recomputer-lab', 'distribution', 'software', 'custom', 'hardware-features', 'ai-computing', 'environment-sensors'];
         categories.forEach(cat => {
             const count = ICONS_DATA.filter(icon => {
                 const titleMatch = icon.title.toLowerCase().includes(searchVal);
