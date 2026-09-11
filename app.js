@@ -334,10 +334,9 @@ document.addEventListener('DOMContentLoaded', () => {
             filename: 'network-data-upload.svg',
             svgMarkup: `
                 <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
-                <path class="svg-primary" d="M7.5 16H5a3.5 3.5 0 0 1-.6-6.9 5 5 0 0 1 9.7-2.3 4 4 0 0 1 4.4 4.7A3.5 3.5 0 0 1 17 16h-2.5" />
-                <path class="svg-accent" d="M12 20V9" />
+                <path class="svg-primary" d="M6 16.5h12a3.5 3.5 0 0 0 0-7h-.7A5 5 0 0 0 7.5 6.5a4 4 0 0 0-3.9 4.3A3.5 3.5 0 0 0 6 16.5z" />
+                <path class="svg-accent" d="M12 18V10" />
                 <path class="svg-accent" d="M8.5 12.5L12 9l3.5 3.5" />
-                <line class="svg-accent" x1="9" y1="20" x2="15" y2="20" />
             `
         },
         {
