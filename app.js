@@ -1,7 +1,350 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Icons Database ---
     const ICONS_DATA = [
-        // Category 0: reComputer AI Lab (6 Featured Icons from image)
+        // Category: SenseCraft HMI UI System Icons (7 Icons)
+        {
+            id: 'hmi-data-node',
+            title: 'Data 数据节点 / HMI Data Node',
+            description: 'SenseCraft HMI data node crosshair, telemetry binding & data pin.',
+            category: 'hmi-ui',
+            filename: 'hmi-data-node.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <circle class="svg-primary" cx="12" cy="12" r="2.5" />
+                <path class="svg-primary" d="M12 4v4.5M12 15.5V20M4 12h4.5M15.5 12H20" />
+                <circle class="svg-accent" cx="12" cy="4" r="1" />
+                <circle class="svg-accent" cx="12" cy="20" r="1" />
+                <circle class="svg-accent" cx="4" cy="12" r="1" />
+                <circle class="svg-accent" cx="20" cy="12" r="1" />
+            `
+        },
+        {
+            id: 'hmi-basic-shape',
+            title: 'Basic 基础图形 / HMI Basic Shapes',
+            description: 'SenseCraft HMI basic geometry shapes and vector graphic tools.',
+            category: 'hmi-ui',
+            filename: 'hmi-basic-shape.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <circle class="svg-primary" cx="12" cy="12" r="7.5" />
+                <rect class="svg-accent" x="8" y="8" width="8" height="8" rx="1.5" />
+            `
+        },
+        {
+            id: 'hmi-component-grid',
+            title: 'Component 组件库 / HMI Component Grid',
+            description: 'SenseCraft HMI four-quadrant component library & app grid.',
+            category: 'hmi-ui',
+            filename: 'hmi-component-grid.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="4" y="4" width="6.5" height="6.5" rx="1.5" />
+                <rect class="svg-primary" x="13.5" y="4" width="6.5" height="6.5" rx="1.5" />
+                <rect class="svg-primary" x="4" y="13.5" width="6.5" height="6.5" rx="1.5" />
+                <rect class="svg-accent" x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5" />
+            `
+        },
+        {
+            id: 'hmi-my-widgets',
+            title: 'My Widgets 我的微件 / HMI My Widgets',
+            description: 'SenseCraft HMI favorite widgets & saved custom UI components.',
+            category: 'hmi-ui',
+            filename: 'hmi-my-widgets.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M12 20.5l-1.45-1.32C5.4 14.36 2 11.28 2 7.5 2 4.42 4.42 2 7.5 2c1.74 0 3.41.81 4.5 2.09C13.09 2.81 14.76 2 16.5 2 19.58 2 22 4.42 22 7.5c0 3.78-3.4 6.86-8.55 11.68L12 20.5z" />
+                <path class="svg-accent" d="M12 6.5v4M10 8.5h4" />
+            `
+        },
+        {
+            id: 'hmi-device-monitor',
+            title: 'Device 设备终端 / HMI Device Monitor',
+            description: 'SenseCraft HMI smart device, display terminal & hardware status.',
+            category: 'hmi-ui',
+            filename: 'hmi-device-monitor.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3.5" y="4" width="17" height="11" rx="2" />
+                <path class="svg-primary" d="M9 15v3.5M15 15v3.5M6 18.5h12" />
+                <rect class="svg-accent" x="9" y="7.5" width="6" height="4" rx="1" />
+            `
+        },
+        {
+            id: 'hmi-tools-wrench',
+            title: 'Tools 工具箱 / HMI Tools',
+            description: 'SenseCraft HMI system tools, settings & calibration utilities.',
+            category: 'hmi-ui',
+            filename: 'hmi-tools-wrench.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M14.7 3.3a4 4 0 0 0-5.4 5.4L3 15a2.12 2.12 0 0 0 3 3l6.3-6.3a4 4 0 0 0 5.4-5.4l-3 3-3-3 3-3z" />
+                <circle class="svg-accent" cx="16.5" cy="7.5" r="1" />
+            `
+        },
+        {
+            id: 'hmi-ai-gen',
+            title: 'AI Gen AI生成 / HMI AI Generation',
+            description: 'SenseCraft HMI AI generator, magic wand & smart design tools.',
+            category: 'hmi-ui',
+            filename: 'hmi-ai-gen.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3z" />
+                <path class="svg-accent" d="M5 4l1 2.5L8.5 7.5 6 8.5 5 11l-1-2.5L1.5 7.5 4 6.5 5 4z" />
+            `
+        },
+        // Category: Manufacturing & Services (5 Icons)
+        {
+            id: 'design-for-manufacturing',
+            title: 'DFM 面向制造的设计 / Design for Manufacturing',
+            description: 'Optimizing hardware design for seamless DFM mass production.',
+            category: 'services',
+            filename: 'design-for-manufacturing.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M5 3h10l4 4v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" />
+                <path class="svg-primary" d="M15 3v4h4" />
+                <path class="svg-primary" d="M7 9h4l2 2v4" />
+                <circle class="svg-primary" cx="7" cy="9" r="0.8" />
+                <circle class="svg-primary" cx="13" cy="15" r="0.8" />
+                <circle class="svg-accent" cx="14" cy="14" r="2.5" />
+                <path class="svg-accent" d="M14 10.5v1M14 16.5v1M10.5 14h1M16.5 14h1" />
+            `
+        },
+        {
+            id: 'prototype-to-production-support',
+            title: '原型到量产支持 / Prototype-to-Production Support',
+            description: 'Seamless end-to-end support from NPI prototyping to full volume production.',
+            category: 'services',
+            filename: 'prototype-to-production-support.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M3.5 8.5L8 6l4.5 2.5V14L8 16.5L3.5 14V8.5z" />
+                <path class="svg-primary" d="M8 6v8M3.5 8.5L8 11M12.5 8.5L8 11" />
+                <path class="svg-accent" d="M13 11h3" />
+                <path class="svg-accent" d="M14.5 9.5L16.5 11l-2 1.5" />
+                <rect class="svg-accent" x="17.5" y="6" width="3.5" height="10" rx="1" />
+                <line class="svg-accent" x1="17.5" y1="9.5" x2="21" y2="9.5" />
+                <line class="svg-accent" x1="17.5" y1="13" x2="21" y2="13" />
+            `
+        },
+        {
+            id: 'testing-quality-assurance',
+            title: '测试与品控 / Testing & Quality Assurance',
+            description: 'Rigorous quality control, functional verification & QA test automation.',
+            category: 'services',
+            filename: 'testing-quality-assurance.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M12 3a9 9 0 0 0 8 5c0 6.5-4 11-8 13C8 19 4 14.5 4 8a9 9 0 0 0 8-5z" />
+                <path class="svg-primary" d="M7 11.5h2l1.5-2.5 2 5 1.5-2.5h2" />
+                <path class="svg-accent" d="M9.5 15.5l2 2 4-4" />
+            `
+        },
+        {
+            id: 'scale-with-flexibility',
+            title: '灵活扩产 / Scale with Flexibility',
+            description: 'Flexible order volumes and agile production scaling.',
+            category: 'services',
+            filename: 'scale-with-flexibility.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="4" y="12" width="7" height="7" rx="1.5" />
+                <rect class="svg-primary" x="13" y="12" width="7" height="7" rx="1.5" />
+                <rect class="svg-primary" x="4" y="3" width="7" height="7" rx="1.5" />
+                <path class="svg-accent" d="M14 5h5v5" />
+                <path class="svg-accent" d="M13 10l6-6" />
+                <path class="svg-accent" d="M11 15.5h2" />
+                <path class="svg-accent" d="M7.5 10v2" />
+            `
+        },
+        {
+            id: 'supply-chain-global-delivery',
+            title: '供应链与全球交付 / Supply Chain & Global Delivery',
+            description: 'Global logistics, warehousing, component sourcing & door-to-door delivery.',
+            category: 'services',
+            filename: 'supply-chain-global-delivery.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <circle class="svg-primary" cx="10" cy="10" r="7" />
+                <path class="svg-primary" d="M3 10h14" />
+                <path class="svg-primary" d="M10 3a9 9 0 0 1 0 14M10 3a9 9 0 0 0 0 14" />
+                <path class="svg-accent" d="M14 13.5L18.5 11.5L22 13.5V18.5L18.5 20.5L14 18.5V13.5Z" />
+                <path class="svg-accent" d="M14 13.5v5M18.5 11.5v9M22 13.5l-3.5 2" />
+                <path class="svg-accent" d="M14 13.5l4.5 2" />
+            `
+        },
+        // Category: Engineering Challenges (4 Icons from image)
+        {
+            id: 'design-vs-production-ready',
+            title: 'Design ≠ Production-ready / 设计≠可量产',
+            description: 'Looks good on paper, but hard to manufacture.',
+            category: 'engineering-challenges',
+            filename: 'design-vs-production-ready.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" />
+                <path class="svg-primary" d="M14 3v5h5" />
+                <path class="svg-primary" d="M8 9h4M8 12h2" />
+                <line class="svg-accent" x1="13.5" y1="13.5" x2="18.5" y2="13.5" />
+                <line class="svg-accent" x1="13.5" y1="16.5" x2="18.5" y2="16.5" />
+                <line class="svg-accent" x1="17.5" y1="12" x2="14.5" y2="18" />
+            `
+        },
+        {
+            id: 'samples-vs-stable-quality',
+            title: 'Samples ≠ Stable Quality / 样品≠稳定品质',
+            description: 'Works for a few, but not at scale.',
+            category: 'engineering-challenges',
+            filename: 'samples-vs-stable-quality.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3.5" y="7" width="9" height="11" rx="1.5" />
+                <path class="svg-primary" d="M3.5 11h9M6 14.5h4" />
+                <path class="svg-primary" d="M6 4.5v2.5M10 4.5v2.5" />
+                <path class="svg-accent" d="M17 7.5c2.5 0 4.5 1.5 4.5 4.5 0 3.5-4.5 6.5-4.5 6.5S12.5 15.5 12.5 12c0-3 2-4.5 4.5-4.5z" />
+                <line class="svg-accent" x1="15" y1="10.5" x2="19" y2="10.5" />
+                <line class="svg-accent" x1="15" y1="13" x2="19" y2="13" />
+                <line class="svg-accent" x1="18" y1="9" x2="16" y2="14.5" />
+            `
+        },
+        {
+            id: 'lab-vs-real-world-reliability',
+            title: 'Lab ≠ Real-world / 实验室≠实际可靠性',
+            description: 'Needs to withstand harsh environments.',
+            category: 'engineering-challenges',
+            filename: 'lab-vs-real-world-reliability.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3" y="4" width="9.5" height="8" rx="1.5" />
+                <path class="svg-primary" d="M6.5 12v3.5M4 15.5h5" />
+                <path class="svg-primary" d="M4.5 8h1.5l1.2-2 1.2 3.5 1.2-1.5h1.4" />
+                <line class="svg-accent" x1="11.5" y1="8" x2="14.5" y2="8" />
+                <line class="svg-accent" x1="11.5" y1="10" x2="14.5" y2="10" />
+                <line class="svg-accent" x1="14" y1="7" x2="12" y2="11" />
+                <path class="svg-accent" d="M18.5 4c2.5 0 4 1.2 4 3.5 0 3.8-4 6.5-4 6.5s-4-2.7-4-6.5c0-2.3 1.5-3.5 4-3.5z" />
+                <path class="svg-accent" d="M18.5 6.2l-1.2 2.2h1.8l-.8 2.2" />
+                <path class="svg-accent" d="M5 19.5l1.5-2M9 19.5l1.5-2M13 19.5l1.5-2M17 19.5l1.5-2" />
+            `
+        },
+        {
+            id: 'scaling-vs-simple',
+            title: 'Scaling ≠ Simple / 规模化≠简单',
+            description: 'Manufacturing, supply chain and delivery are complex.',
+            category: 'engineering-challenges',
+            filename: 'scaling-vs-simple.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3" y="4" width="6" height="6" rx="1" />
+                <path class="svg-primary" d="M5 4v-1.5M7 4v-1.5" />
+                <rect class="svg-primary" x="15" y="4" width="6" height="6" rx="1" />
+                <circle class="svg-primary" cx="16.5" cy="10" r="0.8" />
+                <circle class="svg-primary" cx="19.5" cy="10" r="0.8" />
+                <path class="svg-primary" d="M6 10v4.5a1.5 1.5 0 0 0 1.5 1.5H10" />
+                <path class="svg-primary" d="M18 10v4.5a1.5 1.5 0 0 1-1.5 1.5H14" />
+                <circle class="svg-primary" cx="12" cy="16" r="2" />
+                <path class="svg-primary" d="M12 18v3" />
+                <line class="svg-accent" x1="10" y1="8" x2="14" y2="8" />
+                <line class="svg-accent" x1="10" y1="10.5" x2="14" y2="10.5" />
+                <line class="svg-accent" x1="13" y1="6.5" x2="11" y2="12" />
+            `
+        },
+        // Category: Hardware Lifecycle (6 Process Icons from image)
+        {
+            id: 'define-product-requirements',
+            title: 'Define / 需求定义',
+            description: 'Product requirements & system specification definition.',
+            category: 'lifecycle',
+            filename: 'define-product-requirements.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="5" y="4" width="14" height="17" rx="2" />
+                <path class="svg-primary" d="M9 4V2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5V4" />
+                <path class="svg-accent" d="M8 9.5l1.5 1.5 3-3" />
+                <line class="svg-primary" x1="14" y1="9.5" x2="16.5" y2="9.5" />
+                <path class="svg-accent" d="M8 14.5l1.5 1.5 3-3" />
+                <line class="svg-primary" x1="14" y1="14.5" x2="16.5" y2="14.5" />
+                <line class="svg-primary" x1="8" y1="18.5" x2="14" y2="18.5" />
+            `
+        },
+        {
+            id: 'design-hardware-engineering',
+            title: 'Design / 硬件设计',
+            description: 'Hardware & system engineering design.',
+            category: 'lifecycle',
+            filename: 'design-hardware-engineering.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M4 19.5h16L4 3.5v16z" />
+                <path class="svg-primary" d="M7.5 16h5L7.5 11v5z" />
+                <path class="svg-accent" d="M14 6l4.5 4.5" />
+                <path class="svg-accent" d="M11.5 18.5l9-9" />
+                <circle class="svg-accent" cx="20.5" cy="9.5" r="0.8" />
+            `
+        },
+        {
+            id: 'validate-prototype-refine',
+            title: 'Validate / 原型验证',
+            description: 'Prototype building, testing & iterative refinement.',
+            category: 'lifecycle',
+            filename: 'validate-prototype-refine.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="4" y="6" width="16" height="12" rx="2" />
+                <path class="svg-primary" d="M7 3v3M17 3v3M7 18v3M17 18v3" />
+                <path class="svg-accent" d="M8.5 12l2.5 2.5 5-5" />
+                <path class="svg-accent" d="M18.5 9.5a5 5 0 0 1 0 5" />
+            `
+        },
+        {
+            id: 'manufacture-pcba-assembly',
+            title: 'Manufacture / 制造生产',
+            description: 'PCB, PCBA & mass assembly manufacturing.',
+            category: 'lifecycle',
+            filename: 'manufacture-pcba-assembly.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3" y="13" width="18" height="7" rx="1.5" />
+                <path class="svg-primary" d="M6 13v-2M10 13v-2M14 13v-2M18 13v-2" />
+                <circle class="svg-primary" cx="6" cy="16.5" r="0.8" />
+                <circle class="svg-primary" cx="18" cy="16.5" r="0.8" />
+                <path class="svg-accent" d="M12 2v5" />
+                <path class="svg-accent" d="M9 7h6v2H9z" />
+                <rect class="svg-accent" x="10" y="9" width="4" height="4" rx="0.5" />
+            `
+        },
+        {
+            id: 'test-quality-production',
+            title: 'Test / 品质测试',
+            description: 'Quality assurance & production testing.',
+            category: 'lifecycle',
+            filename: 'test-quality-production.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3" y="4" width="18" height="16" rx="2" />
+                <rect class="svg-primary" x="5" y="6" width="14" height="9" rx="1" />
+                <path class="svg-accent" d="M6.5 10.5h2.5l1.5-3 2 6 1.5-3h2.5" />
+                <circle class="svg-primary" cx="7" cy="17.5" r="0.8" />
+                <circle class="svg-primary" cx="10" cy="17.5" r="0.8" />
+                <path class="svg-accent" d="M14 17.5l1.5 1.5 3-3" />
+            `
+        },
+        {
+            id: 'scale-volume-production',
+            title: 'Scale / 规模量产',
+            description: 'Pilot to volume production scaling.',
+            category: 'lifecycle',
+            filename: 'scale-volume-production.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M4 19h16" />
+                <rect class="svg-primary" x="4" y="13" width="4" height="6" rx="1" />
+                <rect class="svg-primary" x="10" y="9" width="4" height="10" rx="1" />
+                <rect class="svg-primary" x="16" y="5" width="4" height="14" rx="1" />
+                <path class="svg-accent" d="M4 9l5-4 5 2 6-4" />
+                <path class="svg-accent" d="M17 3h3v3" />
+            `
+        },
         {
             id: 'npu-6tops-edge-ai',
             title: '6 TOPS NPU 算力 / 6 TOPS NPU for Edge AI',
@@ -213,6 +556,65 @@ document.addEventListener('DOMContentLoaded', () => {
                 <line class="svg-primary" x1="7" y1="9" x2="7" y2="5" />
                 <line class="svg-primary" x1="12" y1="9" x2="12" y2="5" />
                 <line class="svg-primary" x1="17" y1="9" x2="17" y2="5" />
+            `
+        },
+        {
+            id: 'prototype-design-build',
+            title: '原型打样 / Prototype',
+            description: 'Rapid hardware prototyping and sample build.',
+            category: 'distribution',
+            filename: 'prototype-design-build.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M12 3L20 7.5V16.5L12 21L4 16.5V7.5L12 3Z" />
+                <path class="svg-primary" d="M12 3V12M20 7.5L12 12M4 7.5L12 12" />
+                <path class="svg-accent" d="M12 7.5l4 2.25M12 12l4 2.25M12 16.5l4-2.25" />
+                <circle class="svg-accent" cx="12" cy="12" r="1.5" />
+            `
+        },
+        {
+            id: 'manufacture-assembly-line',
+            title: '批量制造 / Manufacture',
+            description: 'Agile SMT assembly and mass production.',
+            category: 'distribution',
+            filename: 'manufacture-assembly-line.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M4 20V10l4 2.5V10l4 2.5V7l8 4.5V20H4z" />
+                <path class="svg-primary" d="M4 20h16" />
+                <rect class="svg-primary" x="7" y="15" width="2.5" height="3" rx="0.5" />
+                <rect class="svg-primary" x="11.5" y="15" width="2.5" height="3" rx="0.5" />
+                <rect class="svg-primary" x="16" y="15" width="2.5" height="3" rx="0.5" />
+                <circle class="svg-accent" cx="18" cy="5.5" r="1.2" />
+                <path class="svg-accent" d="M16 8c.6-.8 1.6-1 2.5-.4" />
+            `
+        },
+        {
+            id: 'warehouse-storage-hub',
+            title: '仓储管理 / Warehouse',
+            description: 'Smart inventory storage and fulfillment warehouse.',
+            category: 'distribution',
+            filename: 'warehouse-storage-hub.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M3 10L12 4l9 6v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10z" />
+                <path class="svg-primary" d="M9 21v-7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v7" />
+                <path class="svg-accent" d="M12 7.5L15.5 9.5V12.5L12 14.5L8.5 12.5V9.5L12 7.5Z" />
+                <path class="svg-accent" d="M12 7.5v7M15.5 9.5L12 11.2M8.5 9.5L12 11.2" />
+            `
+        },
+        {
+            id: 'dropshipping-direct-fulfillment',
+            title: '代发货 / Dropshipping',
+            description: 'Direct-to-customer global shipping and logistics fulfillment.',
+            category: 'distribution',
+            filename: 'dropshipping-direct-fulfillment.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M12 4.5L19.5 8.5V15.5L12 19.5L4.5 15.5V8.5L12 4.5Z" />
+                <path class="svg-primary" d="M12 4.5v15M19.5 8.5L12 12M4.5 8.5L12 12" />
+                <path class="svg-accent" d="M2 7h4M2 11h2.5M2 15h3.5" />
+                <path class="svg-accent" d="M15.5 16.5l3.5 2 2.5-3" />
             `
         },
 
@@ -442,7 +844,57 @@ document.addEventListener('DOMContentLoaded', () => {
                 <path class="svg-primary" d="M12 2C12 2 8 5.5 8 12c0 2.2 1.8 4 4 4s4-1.8 4-4c0-6.5-4-10-4-10z" />
                 <path class="svg-primary" d="M8 11c-1.5 1-2.5 3-2.5 3l2.5-.5M16 11c1.5 1 2.5 3 2.5 3l-2.5-.5" />
                 <path class="svg-accent" d="M10 16c0 1 2 3 2 3s2-2 2-3" />
-                <circle class="svg-primary" cx="12" cy="8" r="1.5" />
+                <circle class="svg-accent" cx="12" cy="8" r="1.5" />
+            `
+        },
+        {
+            id: 'solution-architect-builders',
+            title: '方案架构师与集成商 / Solution Architect Builders',
+            description: 'System architects & integrators',
+            category: 'custom',
+            filename: 'solution-architect-builders.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="9" y="3.5" width="6" height="4.5" rx="1" />
+                <rect class="svg-primary" x="3.5" y="15" width="6" height="4.5" rx="1" />
+                <rect class="svg-primary" x="14.5" y="15" width="6" height="4.5" rx="1" />
+                <path class="svg-primary" d="M12 8v3M6.5 11h11M6.5 11v4M17.5 11v4" />
+                <circle class="svg-accent" cx="12" cy="11" r="1.5" />
+                <path class="svg-accent" d="M10 5.75h4M4.5 17.25h4M15.5 17.25h4" />
+            `
+        },
+        {
+            id: 'embedded-software-hardware-engineers',
+            title: '嵌入式软硬件工程师 / Embedded Software & Hardware Engineers',
+            description: 'Developers & engineers',
+            category: 'custom',
+            filename: 'embedded-software-hardware-engineers.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="5" y="5" width="14" height="14" rx="2" />
+                <path class="svg-primary" d="M8 2.5v2.5M12 2.5v2.5M16 2.5v2.5M8 19v2.5M12 19v2.5M16 19v2.5M2.5 8h2.5M2.5 12h2.5M2.5 16h2.5M19 8h2.5M19 12h2.5M19 16h2.5" />
+                <path class="svg-accent" d="M9 10l-2 2 2 2" />
+                <path class="svg-accent" d="M15 10l2 2-2 2" />
+                <line class="svg-accent" x1="13" y1="9.5" x2="11" y2="14.5" />
+            `
+        },
+        {
+            id: 'iot-solution-providers',
+            title: 'IoT 方案商与产品公司 / IoT Solution Providers',
+            description: 'Product companies & innovators',
+            category: 'custom',
+            filename: 'iot-solution-providers.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="6.5" y="11.5" width="11" height="8.5" rx="1.5" />
+                <line class="svg-primary" x1="12" y1="11.5" x2="12" y2="9.5" />
+                <path class="svg-accent" d="M8.5 7.5a5 5 0 0 1 7 0" />
+                <path class="svg-accent" d="M6.5 5.5a8 8 0 0 1 11 0" />
+                <circle class="svg-accent" cx="9.5" cy="15.5" r="1" />
+                <path class="svg-primary" d="M12.5 15.5h3" />
+                <path class="svg-primary" d="M2.5 16h4M17.5 16h4" />
+                <circle class="svg-primary" cx="2.5" cy="16" r="0.8" />
+                <circle class="svg-primary" cx="21.5" cy="16" r="0.8" />
             `
         },
         {
@@ -1003,7 +1455,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateCategoryCounts(searchVal) {
-        const categories = ['all', 'recomputer-lab', 'distribution', 'software', 'custom', 'hardware-features', 'ai-computing', 'environment-sensors'];
+        const categories = ['all', 'hmi-ui', 'services', 'engineering-challenges', 'lifecycle', 'recomputer-lab', 'distribution', 'software', 'custom', 'hardware-features', 'ai-computing', 'environment-sensors'];
         categories.forEach(cat => {
             const count = ICONS_DATA.filter(icon => {
                 const titleMatch = icon.title.toLowerCase().includes(searchVal);
