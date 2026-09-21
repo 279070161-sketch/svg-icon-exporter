@@ -1,6 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Icons Database ---
     const ICONS_DATA = [
+        // Category: AI Models & Edge Deployment (4 Icons)
+        {
+            id: 'hundreds-of-pretrained-models',
+            title: 'Hundreds of Pretrained Models / 数百个预置模型',
+            description: 'Select a compatible model from the model zoo, deploy it, and preview results.',
+            category: 'ai-computing',
+            filename: 'hundreds-of-pretrained-models.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M12 3L4 7.5v9L12 21l8-4.5v-9L12 3z" />
+                <path class="svg-primary" d="M12 3v18M20 7.5L12 12M4 7.5L12 12" />
+                <path class="svg-primary" d="M4 12l8 4.5 8-4.5" />
+                <path class="svg-accent" d="M10.5 9.5l4.5 2.5-4.5 2.5v-5z" />
+                <path class="svg-accent" d="M18.5 3.5l1 2 2 1-2 1-1 2-1-2-2-1 2-1z" />
+            `
+        },
+        {
+            id: 'train-onsite-in-3-minutes',
+            title: 'Train On-site in 3 Minutes / 3分钟现场训练',
+            description: 'Train a custom AI model on field data in 3 minutes - no code required.',
+            category: 'ai-computing',
+            filename: 'train-onsite-in-3-minutes.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <circle class="svg-primary" cx="12" cy="13" r="8" />
+                <path class="svg-primary" d="M12 2v3M10 2h4M17.66 6.34l1.42-1.42" />
+                <path class="svg-accent" d="M12 9v4l2.5 2.5" />
+                <path class="svg-accent" d="M6 10a7 7 0 0 1 11.5-2.5" />
+                <path class="svg-accent" d="M17 5v3h-3" />
+                <path class="svg-accent" d="M4.5 13l2.5-4.5h3L8.5 13" />
+            `
+        },
+        {
+            id: 'works-across-compute-levels',
+            title: 'Works Across Compute Levels / 适配不同算力硬件',
+            description: 'Match hardware to your compute needs (MCU, Edge AI, NPU) and deploy flexibly.',
+            category: 'ai-computing',
+            filename: 'works-across-compute-levels.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3" y="14" width="5" height="5" rx="1" />
+                <rect class="svg-primary" x="9" y="10" width="6" height="9" rx="1" />
+                <rect class="svg-primary" x="16" y="5" width="5" height="14" rx="1" />
+                <path class="svg-accent" d="M5.5 14V9.5A1.5 1.5 0 0 1 7 8h5" />
+                <path class="svg-accent" d="M12 10V6.5A1.5 1.5 0 0 1 13.5 5H16" />
+                <circle class="svg-accent" cx="5.5" cy="16.5" r="0.8" />
+                <circle class="svg-accent" cx="12" cy="14.5" r="0.8" />
+                <circle class="svg-accent" cx="18.5" cy="12" r="0.8" />
+            `
+        },
+        {
+            id: 'deploy-to-edge-run-locally',
+            title: 'Deploy to Devices & Edge / 端侧部署，本地运行',
+            description: 'Deploy models to terminal devices or edge hardware and run inference locally offline.',
+            category: 'ai-computing',
+            filename: 'deploy-to-edge-run-locally.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3.5" y="5" width="17" height="12" rx="2" />
+                <path class="svg-primary" d="M7 17v3M17 17v3M5 20h14" />
+                <circle class="svg-accent" cx="12" cy="11" r="3.5" />
+                <path class="svg-accent" d="M10.5 11l1 1 2-2" />
+                <path class="svg-accent" d="M8 8h.01M16 8h.01" />
+            `
+        },
         // Category: SenseCraft HMI UI System Icons (7 Icons)
         {
             id: 'hmi-data-node',
@@ -91,6 +156,216 @@ document.addEventListener('DOMContentLoaded', () => {
                 <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
                 <path class="svg-primary" d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3z" />
                 <path class="svg-accent" d="M5 4l1 2.5L8.5 7.5 6 8.5 5 11l-1-2.5L1.5 7.5 4 6.5 5 4z" />
+            `
+        },
+        // Category: SenseCraft HMI Data Sources (16 Icons)
+        {
+            id: 'hmi-device-sensors',
+            title: 'Device Sensors 设备传感器 / HMI Device Sensors',
+            description: 'SenseCraft HMI device sensors & hardware telemetry data source.',
+            category: 'hmi-data',
+            filename: 'hmi-device-sensors.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="4" y="4" width="16" height="16" rx="2" />
+                <rect class="svg-accent" x="8" y="8" width="8" height="8" />
+                <line class="svg-primary" x1="1" y1="9" x2="4" y2="9" />
+                <line class="svg-primary" x1="1" y1="15" x2="4" y2="15" />
+                <line class="svg-primary" x1="20" y1="9" x2="23" y2="9" />
+                <line class="svg-primary" x1="20" y1="15" x2="23" y2="15" />
+                <line class="svg-primary" x1="9" y1="1" x2="9" y2="4" />
+                <line class="svg-primary" x1="15" y1="1" x2="15" y2="4" />
+                <line class="svg-primary" x1="9" y1="20" x2="9" y2="23" />
+                <line class="svg-primary" x1="15" y1="20" x2="15" y2="23" />
+            `
+        },
+        {
+            id: 'hmi-sensecap',
+            title: 'SenseCAP 传感器节点 / SenseCAP Data',
+            description: 'SenseCAP IoT sensor node, cloud telemetry & device data node.',
+            category: 'hmi-data',
+            filename: 'hmi-sensecap.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M5 12.55a11 11 0 0 1 14.08 0" />
+                <path class="svg-primary" d="M1.42 9a16 16 0 0 1 21.16 0" />
+                <path class="svg-accent" d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+                <line class="svg-accent" x1="12" y1="20" x2="12.01" y2="20" />
+            `
+        },
+        {
+            id: 'hmi-weather',
+            title: 'Weather 天气预报 / Weather Forecast',
+            description: 'SenseCraft HMI weather forecast & meteorological data feed.',
+            category: 'hmi-data',
+            filename: 'hmi-weather.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z" />
+            `
+        },
+        {
+            id: 'hmi-stock',
+            title: 'Stock 股市行情 / Financial Stock Market',
+            description: 'SenseCraft HMI stock market, ticker & financial trend chart data.',
+            category: 'hmi-data',
+            filename: 'hmi-stock.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <polyline class="svg-primary" points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                <polyline class="svg-accent" points="17 6 23 6 23 12" />
+            `
+        },
+        {
+            id: 'hmi-coinmarketcap',
+            title: 'CoinMarketCap 加密货币 / Crypto Currency',
+            description: 'SenseCraft HMI CoinMarketCap crypto price & market index feed.',
+            category: 'hmi-data',
+            filename: 'hmi-coinmarketcap.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <circle class="svg-primary" cx="12" cy="12" r="10" />
+                <path class="svg-accent" d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
+                <line class="svg-accent" x1="12" y1="6" x2="12" y2="8" />
+                <line class="svg-accent" x1="12" y1="16" x2="12" y2="18" />
+            `
+        },
+        {
+            id: 'hmi-github',
+            title: 'GitHub 开源社区 / GitHub Integration',
+            description: 'SenseCraft HMI GitHub repository, workflow & developer commits.',
+            category: 'hmi-data',
+            filename: 'hmi-github.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+            `
+        },
+        {
+            id: 'hmi-youtube',
+            title: 'YouTube 视频与流媒体 / YouTube Data',
+            description: 'SenseCraft HMI YouTube video stream, subscriber & view analytics.',
+            category: 'hmi-data',
+            filename: 'hmi-youtube.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                <polygon class="svg-accent" points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+            `
+        },
+        {
+            id: 'hmi-zenquotes',
+            title: 'ZenQuotes 每日名言 / ZenQuotes Daily Quote',
+            description: 'SenseCraft HMI ZenQuotes daily motivational quotes & API widget.',
+            category: 'hmi-data',
+            filename: 'hmi-zenquotes.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h3c0 4-3 6-4 6zm11 0c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h3c0 4-3 6-4 6z" />
+            `
+        },
+        {
+            id: 'hmi-todoist',
+            title: 'Todoist 待办清单 / Todoist Task Manager',
+            description: 'SenseCraft HMI Todoist tasks, schedule & project checklist integration.',
+            category: 'hmi-data',
+            filename: 'hmi-todoist.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <polyline class="svg-accent" points="9 11 12 14 22 4" />
+                <path class="svg-primary" d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+            `
+        },
+        {
+            id: 'hmi-google-calendar',
+            title: 'Google Calendar 谷歌日历 / Google Calendar',
+            description: 'SenseCraft HMI Google Calendar event sync & agenda widget.',
+            category: 'hmi-data',
+            filename: 'hmi-google-calendar.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line class="svg-accent" x1="16" y1="2" x2="16" y2="6" />
+                <line class="svg-accent" x1="8" y1="2" x2="8" y2="6" />
+                <line class="svg-primary" x1="3" y1="10" x2="21" y2="10" />
+            `
+        },
+        {
+            id: 'hmi-rss-feed',
+            title: 'RSS Feed 内容订阅 / RSS News Feed',
+            description: 'SenseCraft HMI RSS news subscription, blog update & feed reader.',
+            category: 'hmi-data',
+            filename: 'hmi-rss-feed.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M4 11a9 9 0 0 1 9 9" />
+                <path class="svg-primary" d="M4 4a16 16 0 0 1 16 16" />
+                <circle class="svg-accent" cx="5" cy="19" r="1" />
+            `
+        },
+        {
+            id: 'hmi-html',
+            title: 'HTML 网页解析 / HTML Web Fetcher',
+            description: 'SenseCraft HMI HTML web scraping, API endpoint & URL data source.',
+            category: 'hmi-data',
+            filename: 'hmi-html.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <polyline class="svg-primary" points="16 18 22 12 16 6" />
+                <polyline class="svg-accent" points="8 6 2 12 8 18" />
+            `
+        },
+        {
+            id: 'hmi-hackernews',
+            title: 'HackerNews 极客资讯 / HackerNews Feed',
+            description: 'SenseCraft HMI HackerNews tech stories, hot threads & ranking feed.',
+            category: 'hmi-data',
+            filename: 'hmi-hackernews.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="2" y="2" width="20" height="20" rx="4" />
+                <path class="svg-accent" d="M7 6l5 7v5h2v-5l5-7h-2.5L13 11.5 9.5 6H7z" />
+            `
+        },
+        {
+            id: 'hmi-reddit',
+            title: 'Reddit 社区讨论 / Reddit Data Source',
+            description: 'SenseCraft HMI Reddit posts, karma counter & community subreddits.',
+            category: 'hmi-data',
+            filename: 'hmi-reddit.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <circle class="svg-primary" cx="12" cy="12" r="9" />
+                <circle class="svg-primary" cx="12" cy="12" r="3" />
+                <circle class="svg-accent" cx="8" cy="10" r="1" />
+                <circle class="svg-accent" cx="16" cy="10" r="1" />
+                <path class="svg-accent" d="M9 15c1 1 5 1 6 0" />
+            `
+        },
+        {
+            id: 'hmi-external-data-source',
+            title: 'External Data Source 外部数据源 / External API',
+            description: 'SenseCraft HMI custom external API, webhook & JSON data endpoint.',
+            category: 'hmi-data',
+            filename: 'hmi-external-data-source.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <ellipse class="svg-primary" cx="12" cy="5" rx="9" ry="3" />
+                <path class="svg-primary" d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path class="svg-primary" d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+            `
+        },
+        {
+            id: 'hmi-push-to-sensecraft',
+            title: 'Push to SenseCraft 云端推送 / Push to SenseCraft',
+            description: 'SenseCraft HMI cloud push notification, telemetry upload & sync.',
+            category: 'hmi-data',
+            filename: 'hmi-push-to-sensecraft.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-accent" d="M16 16l-4-4-4 4" />
+                <path class="svg-accent" d="M12 12v9" />
+                <path class="svg-primary" d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3" />
             `
         },
         // Category: Manufacturing & Services (5 Icons)
@@ -1455,7 +1730,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateCategoryCounts(searchVal) {
-        const categories = ['all', 'hmi-ui', 'services', 'engineering-challenges', 'lifecycle', 'recomputer-lab', 'distribution', 'software', 'custom', 'hardware-features', 'ai-computing', 'environment-sensors'];
+        const categories = ['all', 'hmi-ui', 'hmi-data', 'services', 'engineering-challenges', 'lifecycle', 'recomputer-lab', 'distribution', 'software', 'custom', 'hardware-features', 'ai-computing', 'environment-sensors'];
         categories.forEach(cat => {
             const count = ICONS_DATA.filter(icon => {
                 const titleMatch = icon.title.toLowerCase().includes(searchVal);
