@@ -1,6 +1,109 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Icons Database ---
     const ICONS_DATA = [
+        // Category: Sensor Modalities (7 Icons)
+        {
+            id: 'environmental-sensing-multisensor',
+            title: '环境传感 / Environmental Sensing',
+            description: 'Temperature, humidity, pressure, air quality & gas multi-sensor telemetry.',
+            category: 'sensor-modalities',
+            filename: 'environmental-sensing-multisensor.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M14 14.5a3.5 3.5 0 1 0 5 0 3.5 3.5 0 0 0-5 0z" />
+                <path class="svg-primary" d="M16.5 4v7" />
+                <circle class="svg-primary" cx="16.5" cy="14.5" r="1.5" />
+                <path class="svg-accent" d="M7.5 4.5C5 8.5 3.5 11 3.5 13.5a5 5 0 0 0 10 0C13.5 11 12 8.5 9.5 4.5z" />
+                <path class="svg-accent" d="M6.5 13.5a3 3 0 0 0 3 3" />
+            `
+        },
+        {
+            id: 'vision-sensing-camera-ai',
+            title: '视觉传感 / Vision Sensing',
+            description: 'Cameras, industrial vision sensors & AI computer vision object detection.',
+            category: 'sensor-modalities',
+            filename: 'vision-sensing-camera-ai.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M4 7h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z" />
+                <path class="svg-primary" d="M8 7L9.5 4.5h5L16 7" />
+                <circle class="svg-accent" cx="12" cy="13.5" r="3.5" />
+                <circle class="svg-accent" cx="12" cy="13.5" r="1.2" />
+                <path class="svg-accent" d="M18 10h1" />
+            `
+        },
+        {
+            id: 'acoustic-sound-sensing-mic',
+            title: '声音传感 / Acoustic & Sound Sensing',
+            description: 'Microphones, noise decibel telemetry, voiceprint & sound event detection.',
+            category: 'sensor-modalities',
+            filename: 'acoustic-sound-sensing-mic.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="9" y="3" width="6" height="10" rx="3" />
+                <path class="svg-primary" d="M5 10a7 7 0 0 0 14 0" />
+                <line class="svg-primary" x1="12" y1="17" x2="12" y2="21" />
+                <line class="svg-primary" x1="8" y1="21" x2="16" y2="21" />
+                <path class="svg-accent" d="M2.5 10v.01M21.5 10v.01" />
+                <path class="svg-accent" d="M12 6.5h.01M12 9.5h.01" />
+            `
+        },
+        {
+            id: 'position-location-sensing-gps',
+            title: '位置感知 / Position & Location Sensing',
+            description: 'GPS, Beidou, UWB, base station positioning & geofencing telemetry.',
+            category: 'sensor-modalities',
+            filename: 'position-location-sensing-gps.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M12 21.5S5 14.5 5 9.5a7 7 0 1 1 14 0c0 5-7 12-7 12z" />
+                <circle class="svg-accent" cx="12" cy="9.5" r="2.5" />
+                <path class="svg-accent" d="M12 2v2M12 17v2M4.5 9.5h2M17.5 9.5h2" />
+            `
+        },
+        {
+            id: 'motion-orientation-gyro-imu',
+            title: '运动姿态 / Motion & Orientation Sensing',
+            description: 'Accelerometer, 6-DOF gyroscope, angular velocity & IMU attitude posture.',
+            category: 'sensor-modalities',
+            filename: 'motion-orientation-gyro-imu.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <circle class="svg-primary" cx="12" cy="12" r="8.5" />
+                <ellipse class="svg-primary" cx="12" cy="12" rx="8.5" ry="3.5" transform="rotate(-30 12 12)" />
+                <circle class="svg-accent" cx="12" cy="12" r="2" />
+                <path class="svg-accent" d="M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3" />
+            `
+        },
+        {
+            id: 'radar-lidar-sensing-mmwave',
+            title: '雷达感知 / Radar & Lidar Sensing',
+            description: 'mmWave radar, Lidar laser distance, velocity & target detection.',
+            category: 'sensor-modalities',
+            filename: 'radar-lidar-sensing-mmwave.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M12 20.5a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17z" />
+                <path class="svg-primary" d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z" />
+                <path class="svg-primary" d="M3.5 12h17M12 3.5v17" />
+                <path class="svg-accent" d="M12 12l5.5-5.5" />
+                <circle class="svg-accent" cx="17.5" cy="6.5" r="1.5" />
+            `
+        },
+        {
+            id: 'electrical-power-sensing-energy',
+            title: '电气传感 / Electrical & Power Sensing',
+            description: 'Voltage, current, power, energy consumption & switch status telemetry.',
+            category: 'sensor-modalities',
+            filename: 'electrical-power-sensing-energy.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M12 3v5M8 3v3M16 3v3" />
+                <path class="svg-primary" d="M6 6h12v5a6 6 0 0 1-12 0V6z" />
+                <path class="svg-primary" d="M12 17v4" />
+                <path class="svg-accent" d="M12.5 8.5l-2.5 3h3.5l-2 3" />
+            `
+        },
         // Category: Network Setup & Cloud APIs (4 Icons)
         {
             id: 'app-network-setup-1min',
@@ -1798,7 +1901,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateCategoryCounts(searchVal) {
-        const categories = ['all', 'hmi-ui', 'hmi-data', 'services', 'engineering-challenges', 'lifecycle', 'recomputer-lab', 'distribution', 'software', 'custom', 'hardware-features', 'ai-computing', 'environment-sensors'];
+        const categories = ['all', 'sensor-modalities', 'hmi-ui', 'hmi-data', 'services', 'engineering-challenges', 'lifecycle', 'recomputer-lab', 'distribution', 'software', 'custom', 'hardware-features', 'ai-computing', 'environment-sensors'];
         categories.forEach(cat => {
             const count = ICONS_DATA.filter(icon => {
                 const titleMatch = icon.title.toLowerCase().includes(searchVal);
