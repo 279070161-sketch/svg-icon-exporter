@@ -1,6 +1,74 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Icons Database ---
     const ICONS_DATA = [
+        // Category: Network Setup & Cloud APIs (4 Icons)
+        {
+            id: 'app-network-setup-1min',
+            title: '1-Minute Network Setup via App / 1分钟App配网',
+            description: 'Configure device connectivity in the mobile app and bring sensors online.',
+            category: 'software',
+            filename: 'app-network-setup-1min.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="6" y="2.5" width="12" height="19" rx="2.5" />
+                <line class="svg-primary" x1="10" y1="5" x2="14" y2="5" />
+                <circle class="svg-primary" cx="12" cy="18.5" r="0.75" />
+                <path class="svg-accent" d="M9.5 10a3.5 3.5 0 0 1 5 0" />
+                <path class="svg-accent" d="M8 8.5a6 6 0 0 1 8 0" />
+                <circle class="svg-accent" cx="12" cy="12" r="0.75" />
+                <path class="svg-accent" d="M12.5 13.5l-1.5 2h2l-1 2" />
+            `
+        },
+        {
+            id: 'cloud-ready-private-deployment',
+            title: 'Cloud Ready, Private Deployment / 云端即用与私有化',
+            description: 'Use the cloud service directly or choose a private enterprise deployment.',
+            category: 'software',
+            filename: 'cloud-ready-private-deployment.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z" />
+                <rect class="svg-accent" x="10" y="13" width="6" height="4.5" rx="1" />
+                <path class="svg-accent" d="M11.5 13V11a1.5 1.5 0 0 1 3 0v2" />
+                <circle class="svg-accent" cx="13" cy="15.25" r="0.5" />
+            `
+        },
+        {
+            id: 'multiple-networking-options-lora',
+            title: 'Multiple Networking Options / 多种通信组网',
+            description: 'Connect sensors through LoRa and other multi-protocol network options.',
+            category: 'software',
+            filename: 'multiple-networking-options-lora.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <line class="svg-primary" x1="12" y1="12" x2="12" y2="21" />
+                <path class="svg-primary" d="M8 21h8" />
+                <path class="svg-primary" d="M9.5 16.5h5" />
+                <circle class="svg-primary" cx="12" cy="12" r="1.5" />
+                <path class="svg-accent" d="M8.5 8.5a5 5 0 0 1 7 0" />
+                <path class="svg-accent" d="M6 6a8.5 8.5 0 0 1 12 0" />
+                <path class="svg-accent" d="M3.5 3.5a12 12 0 0 1 17 0" />
+                <circle class="svg-accent" cx="4" cy="4" r="0.8" />
+                <circle class="svg-accent" cx="20" cy="4" r="0.8" />
+            `
+        },
+        {
+            id: 'open-data-apis-agents',
+            title: 'Open Data APIs / 开放数据接口',
+            description: 'Give external services and AI agents easy access to sensor telemetry data.',
+            category: 'software',
+            filename: 'open-data-apis-agents.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3.5" y="4" width="17" height="12" rx="2" />
+                <path class="svg-primary" d="M7.5 8.5l-2 1.5 2 1.5" />
+                <path class="svg-primary" d="M16.5 8.5l2 1.5-2 1.5" />
+                <line class="svg-primary" x1="13" y1="8" x2="11" y2="12" />
+                <path class="svg-accent" d="M12 16v3.5" />
+                <circle class="svg-accent" cx="12" cy="20.5" r="1.5" />
+                <path class="svg-accent" d="M9.5 20.5h-2M14.5 20.5h2" />
+            `
+        },
         // Category: AI Models & Edge Deployment (4 Icons)
         {
             id: 'hundreds-of-pretrained-models',
