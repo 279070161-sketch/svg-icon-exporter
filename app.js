@@ -1221,6 +1221,98 @@ document.addEventListener('DOMContentLoaded', () => {
                 <line class="svg-primary" x1="13" y1="6.5" x2="18" y2="6.5" />
             `
         },
+        {
+            id: 'information-system-mis-erp',
+            title: '信息化系统 / Information System (MIS/ERP)',
+            description: 'Enterprise information management, ERP, MES & data management system.',
+            category: 'software',
+            filename: 'information-system-mis-erp.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3.5" y="4.5" width="17" height="15" rx="2" />
+                <line class="svg-primary" x1="3.5" y1="8.5" x2="20.5" y2="8.5" />
+                <line class="svg-primary" x1="9" y1="8.5" x2="9" y2="19.5" />
+                <path class="svg-accent" d="M11.5 11.5h6.5M11.5 14.5h4.5M11.5 17.5h5.5" />
+                <circle class="svg-accent" cx="6" cy="11.5" r="1" />
+                <circle class="svg-accent" cx="6" cy="15.5" r="1" />
+            `
+        },
+        {
+            id: 'warehouse-management-system-wms',
+            title: 'WMS 仓储管理系统 / Warehouse Management System',
+            description: 'Smart warehouse inventory, logistics tracking & rack storage system.',
+            category: 'software',
+            filename: 'warehouse-management-system-wms.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M4 19.5h16M5 19.5V5.5h14v14" />
+                <path class="svg-primary" d="M5 10h14M5 14.5h14" />
+                <rect class="svg-accent" x="7" y="6.5" width="4" height="3" rx="0.5" />
+                <rect class="svg-accent" x="13" y="11" width="4" height="3" rx="0.5" />
+                <rect class="svg-accent" x="7" y="15.5" width="4" height="3" rx="0.5" />
+            `
+        },
+        {
+            id: 'data-visualization-analytics',
+            title: '数据可视化 / Data Visualization & Analytics',
+            description: 'Data analytics chart dashboard, trend insights & visual telemetry.',
+            category: 'software',
+            filename: 'data-visualization-analytics.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="3.5" y="4" width="17" height="16" rx="2" />
+                <path class="svg-primary" d="M6.5 16.5V13M10 16.5V10M13.5 16.5V14M17 16.5V8" />
+                <path class="svg-accent" d="M6 11l3.5-3.5 3.5 3 4-4.5" />
+                <circle class="svg-accent" cx="17" cy="6" r="1" />
+            `
+        },
+        {
+            id: 'automation-robotics-workflow',
+            title: '自动化 / Industrial Automation & Workflow',
+            description: 'Automated equipment control, robotics arm & workflow automation.',
+            category: 'software',
+            filename: 'automation-robotics-workflow.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <circle class="svg-primary" cx="8.5" cy="8.5" r="2.5" />
+                <circle class="svg-primary" cx="15.5" cy="15.5" r="2.5" />
+                <path class="svg-accent" d="M11 8.5h3.5a2 2 0 0 1 2 2V13" />
+                <path class="svg-accent" d="M13 15.5H9.5a2 2 0 0 1-2-2V11" />
+                <polyline class="svg-accent" points="14.5,11.5 16.5,13.5 18.5,11.5" />
+                <polyline class="svg-accent" points="9.5,12.5 7.5,10.5 5.5,12.5" />
+            `
+        },
+        {
+            id: 'inhouse-custom-developed-app',
+            title: '自研应用 / In-house Developed Custom Apps',
+            description: 'Proprietary enterprise app, custom modules & self-developed software.',
+            category: 'software',
+            filename: 'inhouse-custom-developed-app.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="4" y="4" width="16" height="16" rx="2" />
+                <path class="svg-accent" d="M8 10l-3 2 3 2" />
+                <path class="svg-accent" d="M16 10l3 2-3 2" />
+                <line class="svg-accent" x1="13" y1="9" x2="11" y2="15" />
+            `
+        },
+        {
+            id: 'more-apps-extended-options',
+            title: '更多 / More Apps & Extended Features',
+            description: 'More enterprise solutions, extended applications & additional features.',
+            category: 'software',
+            filename: 'more-apps-extended-options.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="4" y="4" width="6" height="6" rx="1.5" />
+                <rect class="svg-primary" x="14" y="4" width="6" height="6" rx="1.5" />
+                <rect class="svg-primary" x="4" y="14" width="6" height="6" rx="1.5" />
+                <circle class="svg-accent" cx="15.5" cy="17" r="1" />
+                <circle class="svg-accent" cx="17" cy="17" r="1" />
+                <circle class="svg-accent" cx="18.5" cy="17" r="1" />
+            `
+        },
+
 
         // Category 3: Custom Solutions
         {
