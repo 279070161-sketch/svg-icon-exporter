@@ -1312,6 +1312,103 @@ document.addEventListener('DOMContentLoaded', () => {
                 <circle class="svg-accent" cx="18.5" cy="17" r="1" />
             `
         },
+        {
+            id: 'satellite-communication-ntn',
+            title: '卫星通信 / Satellite Communication (NTN)',
+            description: 'Satellite connectivity, NTN non-terrestrial networks & orbital telemetry.',
+            category: 'software',
+            filename: 'satellite-communication-ntn.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="13.5" y="4.5" width="5" height="5" rx="1" transform="rotate(45 16 7)" />
+                <path class="svg-primary" d="M12.5 3.5l-3-3M19.5 10.5l3 3" />
+                <path class="svg-primary" d="M11 11l-2.5 2.5" />
+                <path class="svg-accent" d="M11.5 16a5.5 5.5 0 0 0-5.5-5.5" />
+                <path class="svg-accent" d="M14.5 18.5a9 9 0 0 0-9-9" />
+                <circle class="svg-accent" cx="5" cy="19" r="1.5" />
+            `
+        },
+        {
+            id: 'cellular-communication-wan',
+            title: '蜂窝通信/广域连接 / Cellular & Wide Area Network',
+            description: 'Cellular 4G/5G, RedCap, LTE-M, WAN & broad geographic connectivity.',
+            category: 'software',
+            filename: 'cellular-communication-wan.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <line class="svg-primary" x1="12" y1="9" x2="12" y2="20" />
+                <path class="svg-primary" d="M7 20h10M9 20l3-10 3 10" />
+                <path class="svg-primary" d="M10 15h4" />
+                <circle class="svg-accent" cx="12" cy="7.5" r="1.5" />
+                <path class="svg-accent" d="M8.5 5a5 5 0 0 1 7 0" />
+                <path class="svg-accent" d="M6 2.5a8.5 8.5 0 0 1 12 0" />
+            `
+        },
+        {
+            id: 'offgrid-mesh-ad-hoc-network',
+            title: '离网通信/mesh自组网 / Off-Grid & Mesh Network',
+            description: 'Off-grid decentralized mesh networks, P2P & self-organizing ad-hoc nodes.',
+            category: 'software',
+            filename: 'offgrid-mesh-ad-hoc-network.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <circle class="svg-primary" cx="12" cy="5.5" r="1.8" />
+                <circle class="svg-primary" cx="5.5" cy="16.5" r="1.8" />
+                <circle class="svg-primary" cx="18.5" cy="16.5" r="1.8" />
+                <path class="svg-primary" d="M10.5 6.8L7 15M13.5 6.8L17 15M7.3 16.5h9.4" />
+                <circle class="svg-accent" cx="12" cy="12" r="1.8" />
+                <path class="svg-accent" d="M12 7.3v2.9M7.1 15.2l3.5-2.2M16.9 15.2l-3.5-2.2" />
+            `
+        },
+        {
+            id: 'iot-lpwan-lorawan-network',
+            title: '物联网/低功耗广域网络 / IoT & LPWAN (LoRaWAN)',
+            description: 'IoT telemetry, LoRaWAN, Sidewalk & low-power long-range WAN protocol.',
+            category: 'software',
+            filename: 'iot-lpwan-lorawan-network.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <rect class="svg-primary" x="8" y="13" width="8" height="7" rx="1.5" />
+                <line class="svg-primary" x1="12" y1="13" x2="12" y2="8" />
+                <circle class="svg-accent" cx="12" cy="8" r="1" />
+                <path class="svg-accent" d="M9.5 5.8a3.5 3.5 0 0 1 5 0" />
+                <path class="svg-accent" d="M7 3.3a7 7 0 0 1 10 0" />
+                <path class="svg-accent" d="M12 15l-1 2h2l-1 2" />
+            `
+        },
+        {
+            id: 'industrial-fieldbus-rs485-can',
+            title: '工业通信/现场总线 / Industrial Communication & Fieldbus',
+            description: 'RS485, CAN bus, EtherCAT, Modbus & industrial fieldbus protocols.',
+            category: 'software',
+            filename: 'industrial-fieldbus-rs485-can.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <line class="svg-primary" x1="3" y1="10" x2="21" y2="10" />
+                <line class="svg-primary" x1="3" y1="14" x2="21" y2="14" />
+                <rect class="svg-primary" x="4.5" y="4" width="5" height="4" rx="1" />
+                <line class="svg-primary" x1="7" y1="8" x2="7" y2="10" />
+                <rect class="svg-primary" x="14.5" y="16" width="5" height="4" rx="1" />
+                <line class="svg-primary" x1="17" y1="14" x2="17" y2="16" />
+                <path class="svg-accent" d="M10 10l1.5-2 1.5 4 1.5-2" />
+                <path class="svg-accent" d="M10 14l1.5 2 1.5-4 1.5 2" />
+            `
+        },
+        {
+            id: 'smarthome-personal-devices-matter',
+            title: '智能家居/个人设备 / Smart Home & Personal Devices',
+            description: 'Matter, Zigbee, BLE, Home Automation & personal wearable smart devices.',
+            category: 'software',
+            filename: 'smarthome-personal-devices-matter.svg',
+            svgMarkup: `
+                <circle class="svg-border" cx="12" cy="12" r="11" fill="none" />
+                <path class="svg-primary" d="M4 11.5L12 5l8 6.5" />
+                <path class="svg-primary" d="M6 10.5V19a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-8.5" />
+                <path class="svg-accent" d="M9.5 13.5a3.5 3.5 0 0 1 5 0" />
+                <circle class="svg-accent" cx="12" cy="16" r="1.2" />
+            `
+        },
+
 
 
         // Category 3: Custom Solutions
